@@ -32,7 +32,7 @@ script.on_event(defines.events.on_entity_died, function(event)
 
             -- and yes, dead nests will still show up here, we need to trim them
             for k, other_nest in pairs(other_nests) do
-                if other_nest.health == 0 then table.remove(other_nests, k) end
+                if other_nest.health == 0 then other_nests[k] = nil end
             end
 
             -- and if no other nests are found, mark the worm
